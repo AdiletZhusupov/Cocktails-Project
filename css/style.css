@@ -1,0 +1,235 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    background-color: whitesmoke;
+}
+main{
+    padding-bottom: 50px;
+}
+.container{
+    width: 90%;
+    margin: 0 auto;
+}
+#about-container{
+    display: none;
+}
+#cocktail-container{
+    display: none;
+}
+header{
+    box-shadow: 0px 8px 5px 0px rgba(0,0,0,0.75);
+    background-color: white;
+    margin-bottom: 50px;
+}
+ul{
+    list-style: none;
+}
+a{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+}
+.main-nav{
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.list-head{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 10px;
+}
+.about, .link-back{
+    cursor: pointer;
+}
+.home{
+    margin-right: 15px;
+    cursor: pointer;
+}
+.logo-pic{
+    max-width: 200px;
+}
+.about-info{
+    line-height: 2rem;
+    font-size: 1rem;
+}
+.search-wrapper{
+    max-width: 500px;
+    margin: 0 auto 50px auto;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 30px;
+    background-color: white;
+    box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.75);
+}
+#search-label{
+    margin-bottom: 20px;
+    color: rgb(7, 103, 7);
+    font-size: 1rem;
+    font-weight: bold;
+}
+#search-bar{
+    border: none;
+    padding: 10px;
+    background-color: whitesmoke;
+}
+.main-word{
+    text-align: center;
+    letter-spacing: 5px;
+    margin-bottom: 50px;
+}
+.grid-parent {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(1, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 50px;
+}
+.cocktail-card{
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.75);
+    transition: 0.5s;
+}
+.cocktail-card:hover{
+    box-shadow: 3px 7px 5px 0px rgba(0,0,0,0.75);
+}
+.card-img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    vertical-align: middle;
+}
+.card-bottom{
+    padding: 20px 30px;
+}
+.card-info{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 10px;
+}
+.drink-type{
+    font-size: 0.8rem;
+    color: grey;
+}
+.link-btn{
+    padding: 5px 10px;
+    background-color: rgb(7, 103, 7);
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.link-btn:hover{
+    background-color: rgb(5, 174, 5);
+}
+.link-back{
+    display: block;
+    text-align: center;
+    width: 200px;
+    margin: 0 auto 50px auto;
+    padding: 5px 10px;
+    background-color: rgb(7, 103, 7);
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.link-back:hover{
+    background-color: rgb(5, 174, 5);
+}
+.cocktail-details {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 10px;
+}
+.cocktail-picture{
+    border-radius: 5px;
+    overflow: hidden;
+}
+.cocktail-img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    vertical-align: middle;
+}
+.cocktail-inner{
+    font-size: 1rem;
+}
+.information{
+    display: inline-block;
+    margin: 0 10px 5px 0;
+    padding: 5px 10px;
+    background-color: rgb(136, 206, 136);
+    border-radius: 5px;
+}
+.warning{
+    display: none;
+    text-align: center;
+}
+@media only screen and (min-width: 500px) {
+    .grid-parent {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
+}
+@media only screen and (min-width: 700px) {
+    .cocktail-img{
+        width: 100%;
+        height: 300px;
+        object-fit: contain;
+        vertical-align: middle;
+    }
+    .cocktail-details {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 0px;
+    }
+    .cocktail-description{
+        display: flex;
+        align-items: center;
+    }
+}
+@media only screen and (min-width: 900px) {
+    .grid-parent {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
+    .about-info{
+        width: 600px;
+        margin: 0 auto;
+    }
+}
+@media only screen and (min-width: 1300px) {
+    .container{
+        width: 1200px;
+    }
+}

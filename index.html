@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Cocktails</title>
+</head>
+<body>
+    <header>
+        <div class="container" id="header-container">
+            <nav class="main-nav">
+                <a href="" class="logo"><img class="logo-pic" src="https://cocktails-db-project.netlify.app/static/media/logo.9a3d2645.svg" alt="Page-log"></a>
+                <ul class="list-head">
+                    <li class="home">Home</li>
+                    <li class="about">About</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div id="main-container"></div>
+            <div id="about-container">
+                <h2 class="main-word">About Us</h2>
+                <p class="about-info">Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                    Praesentium molestias illum culpa dolores quo hic laboriosam
+                    earum laudantium nemo deleniti tempore similique perferendis
+                    quis odit architecto rem dignissimos deserunt.
+                </p>
+            </div>
+            <div id="cocktail-container">
+                <a class="link-back">Back to home</a>
+                <h2 class="main-word" id="cocktail-exact-name"></h2>
+                <div class="cocktail-details">
+                    <div class="cocktail-picture">
+                        <img src="" class="cocktail-img" alt="">
+                    </div>
+                    <div class="cocktail-description">
+                        <ul class="cocktail-inner">
+                            <li><span class="information">Name:</span><span id="name"></span></li>
+                            <li><span class="information">Category:</span><span id="category"></span></li>
+                            <li><span class="information">Info:</span><span id="info"></span></li>
+                            <li><span class="information">Glass:</span><span id="glass"></span></li>
+                            <li><span class="information">Instructions:</span><span id="instructions"></span></li>
+                            <li><span class="information">Ingredients:</span><span id="ingredients"></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2 class="warning">No Cocktails Matched Your Search Criteria</h2>
+    </main>
+
+
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/data.js"></script>
+</body>
+</html>
