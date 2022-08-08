@@ -163,23 +163,46 @@ backLink.addEventListener("click", ()=>{
 input.addEventListener('keyup', ()=>{
 
     let allDrinkNames = document.querySelectorAll(".drink-name");
-    let allCocktails = document.querySelectorAll(".cocktail-card");
-
-    let number = 0;
+    let allCocktails = document.querySelectorAll(".cocktail-card");  //for the FIRST WAY
     const warning = document.querySelector(".warning");
-    for(let i=0;i<allDrinkNames.length;i++){
-        if((allDrinkNames[i].innerText).toLowerCase().includes(input.value.toLowerCase())){
-            allCocktails[i].style.display = "block"
-            number += 1;
+    
+    
+    // FIRST WAY
+    // let number = 0;
+    // for(let i=0;i<allDrinkNames.length;i++){
+    //     if((allDrinkNames[i].innerText).toLowerCase().includes(input.value.toLowerCase())){
+    //         allCocktails[i].style.display = "block"
+    //         number += 1;
+    //     }else{
+    //         allCocktails[i].style.display = "none"
+    //         number -= 1;
+    //     }
+    // }
+    
+    // if(number === -(allCocktails.length)){
+    //     warning.style.display = "block";
+    // }else{
+    //     warning.style.display = "none";
+    // }
+    
+    
+    // SECOND WAY 
+    const arrayOfDrinkNames = Array.from(allDrinkNames);    
+    const arr1 = [];
+
+    arrayOfDrinkNames.filter((drinkName)=>{
+        if(!drinkName.innerText.toLowerCase().includes(input.value.toLowerCase())){
+            return drinkName.parentElement.parentElement.parentElement.style.display = "none";
         }else{
-            allCocktails[i].style.display = "none"
-            number -= 1;
+            arr1.push(drinkName.parentElement.parentElement.parentElement)
+            return drinkName.parentElement.parentElement.parentElement.style.display = "block";
         }
-    }
-    if(number === -(allCocktails.length)){
-        warning.style.display = "block";
-    }else{
+    });
+
+    if(arr1.length > 0){
         warning.style.display = "none";
+    }else{
+        warning.style.display = "block";
     }
 })
 
