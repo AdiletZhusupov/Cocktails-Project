@@ -163,11 +163,11 @@ backLink.addEventListener("click", ()=>{
 input.addEventListener('keyup', ()=>{
 
     let allDrinkNames = document.querySelectorAll(".drink-name");
-    let allCocktails = document.querySelectorAll(".cocktail-card");  //for the FIRST WAY
+    let allCocktails = document.querySelectorAll(".cocktail-card"); //for the FIRST WAY
     const warning = document.querySelector(".warning");
     
     
-    // FIRST WAY
+    //  FIRST WAY
     // let number = 0;
     // for(let i=0;i<allDrinkNames.length;i++){
     //     if((allDrinkNames[i].innerText).toLowerCase().includes(input.value.toLowerCase())){
@@ -178,32 +178,30 @@ input.addEventListener('keyup', ()=>{
     //         number -= 1;
     //     }
     // }
-    
+
     // if(number === -(allCocktails.length)){
     //     warning.style.display = "block";
     // }else{
     //     warning.style.display = "none";
     // }
+        // SECOND WAY 
+        const arrayOfDrinkNames = Array.from(allDrinkNames);    
+        const arr1 = [];
     
+        arrayOfDrinkNames.filter((drinkName)=>{
+            if(!drinkName.innerText.toLowerCase().includes(input.value.toLowerCase())){
+                return drinkName.parentElement.parentElement.parentElement.style.display = "none";
+            }else{
+                arr1.push(drinkName.parentElement.parentElement.parentElement)
+                return drinkName.parentElement.parentElement.parentElement.style.display = "block";
+            }
+        });
     
-    // SECOND WAY 
-    const arrayOfDrinkNames = Array.from(allDrinkNames);    
-    const arr1 = [];
-
-    arrayOfDrinkNames.filter((drinkName)=>{
-        if(!drinkName.innerText.toLowerCase().includes(input.value.toLowerCase())){
-            return drinkName.parentElement.parentElement.parentElement.style.display = "none";
+        if(arr1.length > 0){
+            warning.style.display = "none";
         }else{
-            arr1.push(drinkName.parentElement.parentElement.parentElement)
-            return drinkName.parentElement.parentElement.parentElement.style.display = "block";
+            warning.style.display = "block";
         }
-    });
-
-    if(arr1.length > 0){
-        warning.style.display = "none";
-    }else{
-        warning.style.display = "block";
-    }
 })
 
 
